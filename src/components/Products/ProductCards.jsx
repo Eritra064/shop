@@ -39,7 +39,7 @@ const ProductCards = () => {
           <Card className="border-0">
             <div className="custom-background p-5">
               <Card.Img variant="top" src={product.image} />
-              <div className="add-to-cart"><button>Add to cart</button></div>
+              <div className="add-to-cart"><button onClick={handleCart}>Add to cart</button></div>
             </div>
           
             <div className="custom-2 rounded">
