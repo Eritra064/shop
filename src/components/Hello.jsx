@@ -1,197 +1,107 @@
-const Hello = () => {
+import { Link } from "react-router-dom";
+import "../../assets/css/myaccount.css";
+
+const MyAccount = () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  console.log(storedUser);
+
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <h3 class="mb-3">Carousel cards title </h3>
+    <div className="container mx-auto mt-5">
+      <div className="d-flex justify-content-between mb-5">
+        <div className="d-flex gap-2">
+          <Link style={{ textDecoration: "none", color: "black" }} to="/">
+            <p>Home</p>
+          </Link>
+          <p>/</p>
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/myaccount"
+          >
+            <p className="font-weight-bold">My Account</p>
+          </Link>
         </div>
-        <div class="col-6 text-right">
-          <a
-            class="btn btn-primary mb-3 mr-1"
-            href="#carouselExampleIndicators2"
-            role="button"
-            data-slide="prev"
-          >
-            <i class="fa fa-arrow-left"></i>
-          </a>
-          <a
-            class="btn btn-primary mb-3 "
-            href="#carouselExampleIndicators2"
-            role="button"
-            data-slide="next"
-          >
-            <i class="fa fa-arrow-right"></i>
-          </a>
+        <div>
+          <p>
+            Welcome! <span style={{ color: "red" }}>{storedUser.name}</span>
+          </p>
         </div>
-        <div class="col-12">
-          <div
-            id="carouselExampleIndicators2"
-            class="carousel slide"
-            data-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img
-                        class="img-fluid"
-                        alt="100%x280"
-                        src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6"
-                      />
-                      <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">
-                          With supporting text below as a natural lead-in to
-                          additional content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      </div>
+      <div className="row d-flex col-md-12">
+        <div className="col-4">
+          <div className="d-flex flex-column">
+            <p className="font-weight-bold">Manage My Account</p>
+            <div style={{ marginLeft: "5%", color: "#7D8184" }}>
+              <p>My Profile</p>
+              <p>Address Book</p>
+              <p>My Payment Options</p>
             </div>
           </div>
+
+          <div className="d-flex flex-column">
+            <p className="font-weight-bold">My Orders</p>
+            <div style={{ marginLeft: "5%", color: "#7D8184" }}>
+              <p>My Returns</p>
+              <p>My Cancellations</p>
+            </div>
+          </div>
+          <p className="font-weight-bold">My WishList</p>
+        </div>
+        <div className="col-8 mb-5 p-5 box">
+          <h4 style={{ color: "red" }}>Edit Your Profile</h4>
+          <form className="d-flex flex-column gap-3">
+            <div className="d-flex">
+              <div style={{ width: "45%", marginRight:"10%" }} className="d-flex flex-column">
+                <label>First Name</label>
+                <input type="text" name="name" placeholder={storedUser.name} />
+              </div>
+              <div style={{ width: "45%" }} className="d-flex flex-column">
+                <label>Last Name</label>
+                <input type="text" name="name" placeholder={storedUser.name} />
+              </div>
+            </div>
+
+            <div className="d-flex">
+              <div style={{ width: "45%", marginRight:"10%" }} className="d-flex flex-column">
+                <label>Email</label>
+                <input type="text" name="name" placeholder={storedUser.email} />
+              </div>
+              <div style={{ width: "45%" }} className="d-flex flex-column">
+                <label>Address</label>
+                <input type="text" name="name" />
+              </div>
+            </div>
+            <div style={{ width: "100%" }} className="d-flex flex-column gap-2">
+              <label>Password Changes</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Current Password"
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="New Password"
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Confirm New Password"
+              />
+            </div>
+            <div className="d-flex gap-2 ml-auto">
+              <button className="bg-white border-0">Cancel</button>
+              <button
+                className="px-5 py-3 border-0 rounded"
+                style={{ backgroundColor: "#DB4444", color: "white" }}
+              >
+                Save Changes
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   );
 };
 
-export default Hello;
+export default MyAccount;
